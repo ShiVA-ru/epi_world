@@ -1,7 +1,6 @@
 <script>
-	import '../app.css';
+	import '../../app.css';
 </script>
-
 
 <div class="container">
 	<slot />
@@ -38,6 +37,7 @@
 		</li>
 	</ul>
 </nav>
+
 <!-- <ul>
 	<li><a href="/">Главная страница</a></li>
 	<li><a href="/account">Обратная связь</a></li>
@@ -45,7 +45,6 @@
 	<li><a href="/paint">Арттерапия</a></li>
 	<li><a href="/tests">Тесты</a></li>
 </ul> -->
-
 
 <style>
 	.container {

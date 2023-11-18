@@ -1,7 +1,7 @@
 <script>
-	import Accept from './../../lib/components/profile/accept.svelte';
-	import AddChild from './../../lib/components/profile/AddChild.svelte';
- 
+	import Accept from '$glib/components/profile/accept.svelte';
+	import AddChild from '$glib/components/profile/AddChild.svelte';
+
 	let isChild = false;
 
 	function handleMessage(event) {
@@ -23,14 +23,13 @@
 	</div>
 
 	{#if isChild}
-	<Accept />
+		<Accept />
 	{:else}
-	<AddChild on:addChild={handleMessage} />
+		<AddChild on:addChild={handleMessage} />
 	{/if}
 </section>
 
 <style>
-
 	.profile {
 		display: flex;
 		margin-bottom: 40px;
