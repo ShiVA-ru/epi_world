@@ -4,12 +4,80 @@
 
 <h1>Навигация</h1>
 
-<ul>
+<nav class="nav-bar">
+	<ul class="links">
+		<li class="link">
+			<img
+				src="/icons/diagnostic.svg"
+				alt="Диагностика"
+			/>
+			<a href="/statistic">Диагностика</a>
+		</li>
+		<li class="link">
+			<img
+				src="/icons/forum.svg"
+				alt="Форум"
+			/>
+			<a href="/feedback">Форум</a>
+		</li>
+		<li class="link">
+			<img
+				src="/icons/profile.svg"
+				alt="Профиль"
+			/>
+			<a href="/account">Профиль</a>
+		</li>
+	</ul>
+</nav>
+<!-- <ul>
 	<li><a href="/">Главная страница</a></li>
 	<li><a href="/account">Обратная связь</a></li>
 	<li><a href="/feedback">Личный кабинет</a></li>
 	<li><a href="/paint">Арттерапия</a></li>
 	<li><a href="/tests">Тесты</a></li>
-</ul>
+</ul> -->
 
 <slot />
+
+<style>
+	.nav-bar {
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+		height: 80px;
+		background: #EFE5FF;
+		border-top: #4e1867 1px solid;
+		display: flex;
+		align-items: center;
+	}
+
+	.nav-bar .links {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+	}
+
+	.nav-bar .links .link {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.nav-bar .links img {
+		margin: 0 auto;
+		width: 24px;
+		height: 24px;
+		margin-bottom: 3px;
+	}
+
+	.nav-bar .links a {
+		color: #4e1867;
+		text-align: center;
+		font-size: 10px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: normal;
+		letter-spacing: -0.15px;
+	}
+</style>
