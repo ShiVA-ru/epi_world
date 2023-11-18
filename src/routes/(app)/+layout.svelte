@@ -1,42 +1,30 @@
 <script>
 	import '../../app.css';
+	import Navbar from '../../lib/components/navbar/navbar.svelte';
+	import { getUser } from './../../lib/api/api.js';
+	import { onMount } from 'svelte';
+
+	export let data;
+
+	const token = data.token;
+	let isAuth = false;
+
+	onMount(async () => {
+		if (!token) {
+			return;
+		}
+		const userRes = await getUser(1);
+		const user = await userRes.json();
+		console.log('res', user);
+	})
+
 </script>
 
 <div class="container">
 	<slot />
 </div>
 
-<nav class="nav-bar">
-	<ul class="links">
-		<li class="link">
-			<a href="/statistic">
-				<img
-					src="/icons/diagnostic.svg"
-					alt="Диагностика"
-				/>
-				<span>Диагностика</span>
-			</a>
-		</li>
-		<li class="link">
-			<a href="/feedback">
-				<img
-					src="/icons/forum.svg"
-					alt="Форум"
-				/>
-				<span>Обратная связь</span>
-			</a>
-		</li>
-		<li class="link">
-			<a href="/account">
-				<img
-					src="/icons/profile.svg"
-					alt="Профиль"
-				/>
-				<span>Профиль</span>
-			</a>
-		</li>
-	</ul>
-</nav>
+<Navbar />
 
 <!-- <ul>
 	<li><a href="/">Главная страница</a></li>
@@ -46,52 +34,4 @@
 	<li><a href="/tests">Тесты</a></li>
 </ul> -->
 
-<style>
-	.container {
-		padding-left: 30px;
-		padding-right: 30px;
-		padding-top: 30px;
-	}
 
-	.nav-bar {
-		position: fixed;
-		bottom: 0;
-		width: 100%;
-		height: 80px;
-		background: #efe5ff;
-		border-top: #4e1867 1px solid;
-		display: flex;
-		align-items: center;
-	}
-
-	.nav-bar .links {
-		width: 100%;
-		display: flex;
-		align-items: center;
-		justify-content: space-around;
-	}
-
-	.nav-bar .links .link {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		width: 75px;
-	}
-
-	.nav-bar .links img {
-		margin: 0 auto;
-		width: 24px;
-		height: 24px;
-		margin-bottom: 3px;
-	}
-
-	.nav-bar .links a {
-		color: #4e1867;
-		text-align: center;
-		font-size: 10px;
-		font-style: normal;
-		font-weight: 500;
-		line-height: normal;
-		letter-spacing: -0.15px;
-	}
-</style>
