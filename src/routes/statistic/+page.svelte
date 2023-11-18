@@ -60,7 +60,6 @@
         &-title{
             padding: 30px  0;
             font-size: 24px;
-            font-size: 24px;
             font-style: normal;
             font-weight: 600;
             line-height: 22px;
@@ -73,6 +72,7 @@
             grid-auto-rows: 0;
             overflow-y: hidden;
             row-gap: 0;
+            padding: 0 5%;
         }
         &-text{
             color: #000;

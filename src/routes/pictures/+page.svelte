@@ -3,7 +3,7 @@
     export let data;
 </script>
 
-<div class="picture container mx-auto">
+<div class="picture container mx-auto items-center justify-center">
     <a href="/statistic">    
         <img src="/statistic/back.svg" class="picture-back" alt="bach">
     </a>
@@ -29,7 +29,6 @@
     .picture-title{
         padding: 30px  0;
         font-size: 24px;
-        font-size: 24px;
         font-style: normal;
         font-weight: 600;
         line-height: 22px;
@@ -37,9 +36,9 @@
 
     .picture-item{
         display: grid;
-        gap: 30px;
+        gap: 35px;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         overflow: auto;
-        margin-bottom: 100px;
+        margin-bottom: 80px;
     }
 </style>
