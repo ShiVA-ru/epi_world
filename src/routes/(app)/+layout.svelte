@@ -43,7 +43,7 @@
 	<li><a href="/account">Обратная связь</a></li>
 	<li><a href="/feedback">Личный кабинет</a></li>
 	<li><a href="/paint">Арттерапия</a></li>
-	<li><a href="/tests">Тесты</a></li>
+	<li><a href="/testing">Тесты</a></li>
 </ul> -->
 
 <style>
