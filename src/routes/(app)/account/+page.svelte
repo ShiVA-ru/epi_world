@@ -1,6 +1,7 @@
 <script>
 	import Accept from '$lib/components/profile/accept.svelte';
 	import AddChild from '$lib/components/profile/AddChild.svelte';
+	import Info from '../../../lib/components/profile/info.svelte';
 
 	let isChild = false;
 
@@ -22,10 +23,12 @@
 		</div>
 	</div>
 
+	<!-- {#if localStorage.getItem("isChild")} -->
 	{#if isChild}
-		<Accept />
+	<Accept />
+	<Info />
 	{:else}
-		<AddChild on:addChild={handleMessage} />
+	<AddChild on:addChild={handleMessage} />
 	{/if}
 </section>
 
