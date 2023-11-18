@@ -7,7 +7,7 @@
 
 <EwButton class="button">Я кнопка</EwButton>
 <EwInput
-	placeholderText="Введите пароль"
+	placeholderText="Имя ребенка"
 	type="text"
 />
 
