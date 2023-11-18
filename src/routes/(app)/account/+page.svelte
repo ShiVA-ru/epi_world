@@ -1,6 +1,6 @@
 <script>
-	import Accept from '$glib/components/profile/accept.svelte';
-	import AddChild from '$glib/components/profile/AddChild.svelte';
+	import Accept from '$lib/components/profile/accept.svelte';
+	import AddChild from '$lib/components/profile/AddChild.svelte';
 
 	let isChild = false;
 
