@@ -1,6 +1,15 @@
 <script>
-	import EwButton from '$lib/components/forms/EWButton.svelte';
-	import EwInput from '$lib/components/forms/EWInput.svelte';
+	import '../../app.css';
+
+	function sumbitHanler(event) {
+		let formData = new FormData(event.target);
+		const data = {};
+		for (let field of formData) {
+			const [key, value] = field;
+			data[key] = value;
+		}
+		console.log(data);
+	}
 </script>
 
 <div class="container">
@@ -8,12 +17,15 @@
 		<img
 			src="logo.png"
 			alt="Логотип"
-			width="151"
+			width="150"
 		/>
 	</header>
 	<h1 class="main-title">Вход</h1>
 
-	<form class="form">
+	<form
+		class="form"
+		on:submit={sumbitHanler}
+	>
 		<label class="form__label">
 			Логин
 			<input
@@ -60,13 +72,17 @@
 				/>
 			</a>
 		</div>
-		<a href="/">Не удается зайти</a>
+		<a
+			class="third-party-auth__forget-link"
+			href="/">Не удается зайти</a
+		>
 	</div>
 </div>
 
 <style lang="scss">
 	.container {
 		padding: 0 28px;
+		margin-bottom: -60px;
 	}
 
 	.header {
@@ -115,9 +131,15 @@
 	}
 
 	.third-party-auth {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		gap: 50px;
+
 		&__title {
-			margin-bottom: 50px;
-			text-align: center;
+			// margin-bottom: 50px;
+			// text-align: center;
 			color: var(--light);
 			font-size: 16px;
 			font-weight: 400;
@@ -127,6 +149,12 @@
 			display: flex;
 			gap: 45px;
 			align-items: center;
+		}
+
+		&__forget-link {
+			color: var(--light);
+			font-size: 16px;
+			font-weight: 400;
 		}
 	}
 </style>
