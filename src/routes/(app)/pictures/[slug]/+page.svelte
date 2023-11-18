@@ -3,10 +3,12 @@
 </script>
 
 <div class="picture container max-auto">
-    <a href="/pictures">    
+    
+    <a href="/pictures">
         <img src="/statistic/back.svg" class="picture-back" alt="bach">
     </a>
     <h2 class="picture-title">{data.post.title}</h2>
+    
     <p class="picture-date">{data.post.date}</p>
 
     <div class="picture-wrapper">
@@ -19,11 +21,11 @@
 
 <style>
     .picture{
-        padding: 30px 30px;
+        padding: 30px 5%;
     }
 
     .picture-title{
-        padding-top: 15px;
+        padding-top: 10px;
         font-size: 20px;
         font-style: normal;
         font-weight: 600;

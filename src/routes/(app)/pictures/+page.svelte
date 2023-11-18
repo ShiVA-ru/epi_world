@@ -4,10 +4,12 @@
 </script>
 
 <div class="picture container mx-auto items-center justify-center">
-    <a href="/statistic">    
-        <img src="/statistic/back.svg" class="picture-back" alt="bach">
-    </a>
-    <h2 class="picture-title">Все рисунки</h2>
+    <div class="picture__title flex items-center">
+        <a href="/statistic">    
+            <img src="/statistic/back.svg" class="picture-back" alt="bach">
+        </a>
+        <h2 class="picture-title">Все рисунки</h2>
+    </div>
     <div class="picture-item">
         {#each data.summaries as { slug, imgSrc, title, date }}
             <a href="/pictures/{slug}">
@@ -23,11 +25,11 @@
 
 <style>
     .picture{
-        padding: 30px 30px;
+        padding: 0 5%;
     }
 
     .picture-title{
-        padding: 30px  0;
+        padding: 30px  5%;
         font-size: 24px;
         font-style: normal;
         font-weight: 600;

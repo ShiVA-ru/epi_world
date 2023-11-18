@@ -1,5 +1,5 @@
 <script>
-	import EwButton from "../../lib/components/forms/EWButton.svelte";
+	import EwButton from "$lib/components/forms/EWButton.svelte";
     import EwPicture from "./EWPicture.svelte";
 
     export let data;
@@ -9,6 +9,7 @@
     <h2 class="statistic-title">Диагностика</h2>
     
     <h3 class="statistic-text">Рисунки вашего ребенка</h3>
+    <p class="statistic__botton-text">Последние рисунки</p>
     <div class="statistic-item">
         {#each data.summaries as { slug, imgSrc, title, date }}
             <a href="/pictures/{slug}">
@@ -56,7 +57,7 @@
 	}
 
     .statistic{
-        padding: 0 30px;
+        // padding: 0 30px;
         &-title{
             padding: 30px  0;
             font-size: 24px;
