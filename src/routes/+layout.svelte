@@ -2,8 +2,6 @@
 	import '../app.css';
 </script>
 
-<h1>Навигация</h1>
-
 <nav class="nav-bar">
 	<ul class="links">
 		<li class="link">
