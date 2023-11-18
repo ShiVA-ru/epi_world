@@ -11,7 +11,7 @@
 			const [key, value] = field;
 			data[key] = value;
 		}
-		console.log("addChild", data);
+		console.log('addChild', data);
 
 		// localStorage.setItem('isChild', true);
 		dispatch('addChild', {
@@ -29,60 +29,55 @@
 		Имя
 		<input
 			type="text"
-			placeholder="Имя"
 			class="input"
-            id="firstName"
-            name="firstName"
-            value=""
-            required
+			id="firstName"
+			name="firstName"
+			value=""
+			required
 		/>
 	</label>
 	<label>
 		Фамилия
 		<input
 			type="text"
-			placeholder="Фамилия"
 			class="input"
-            id="lastName"
-            name="lastName"
-            value=""
-            required
+			id="lastName"
+			name="lastName"
+			value=""
+			required
 		/>
 	</label>
 	<label>
 		Дата рождения
 		<input
 			type="date"
-			placeholder="Дата рождения"
 			class="input"
-            id="birthDate"
-            name="birthDate"
-            value=""
-            required
+			id="birthDate"
+			name="birthDate"
+			value=""
+			required
 		/>
 	</label>
-    <label>
+	<label>
 		Логин
 		<input
 			type="text"
-			placeholder="Дата рождения"
 			class="input"
-            id="login"
-            name="login"
-            value=""
-            required
+			id="login"
+			name="login"
+			value=""
+			required
 		/>
 	</label>
-    <label>
+	<label>
 		Пароль
 		<input
 			type="password"
-			placeholder="Дата рождения"
 			class="input"
-            id="password"
-            name="password"
-            value=""
-            required
+			id="password"
+			name="password"
+			value=""
+			required
 		/>
 	</label>
 	<button>Добавить</button>
@@ -106,18 +101,17 @@
 		font-style: normal;
 		font-weight: 600;
 		line-height: normal;
-		letter-spacing: -0.27px;
 		margin-bottom: 34px;
 	}
 
-    label {
-        display: flex;
-        flex-direction: column;
-    }
+	label {
+		display: flex;
+		flex-direction: column;
+	}
 
 	input {
-		border-radius: 11px;
-		border: 1px solid #42049f;
+		border-radius: 10px;
+		border: 1px solid var(--dark);
 		background: #fff;
 		width: 240px;
 		height: 38px;
@@ -127,17 +121,14 @@
 	}
 
 	button {
-		width: 165px;
+		width: 240px;
 		height: 43px;
 		flex-shrink: 0;
 		border-radius: 20px;
-		background: #7f18af;
+		background: var(--primary);
 		color: #fff;
 		font-size: 17px;
-		font-style: normal;
 		font-weight: 500;
-		line-height: normal;
-		letter-spacing: -0.255px;
 		margin-top: 15px;
 	}
 </style>
