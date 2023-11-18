@@ -1,34 +1,43 @@
 <script>
-	import '../app.css';
+	import '../../app.css';
 </script>
 
-<h1>Навигация</h1>
+<div class="container">
+	<slot />
+</div>
 
 <nav class="nav-bar">
 	<ul class="links">
 		<li class="link">
-			<img
-				src="/icons/diagnostic.svg"
-				alt="Диагностика"
-			/>
-			<a href="/statistic">Диагностика</a>
+			<a href="/statistic">
+				<img
+					src="/icons/diagnostic.svg"
+					alt="Диагностика"
+				/>
+				<span>Диагностика</span>
+			</a>
 		</li>
 		<li class="link">
-			<img
-				src="/icons/forum.svg"
-				alt="Форум"
-			/>
-			<a href="/feedback">Форум</a>
+			<a href="/feedback">
+				<img
+					src="/icons/forum.svg"
+					alt="Форум"
+				/>
+				<span>Форум</span>
+			</a>
 		</li>
 		<li class="link">
-			<img
-				src="/icons/profile.svg"
-				alt="Профиль"
-			/>
-			<a href="/account">Профиль</a>
+			<a href="/account">
+				<img
+					src="/icons/profile.svg"
+					alt="Профиль"
+				/>
+				<span>Профиль</span>
+			</a>
 		</li>
 	</ul>
 </nav>
+
 <!-- <ul>
 	<li><a href="/">Главная страница</a></li>
 	<li><a href="/account">Обратная связь</a></li>
@@ -37,15 +46,19 @@
 	<li><a href="/tests">Тесты</a></li>
 </ul> -->
 
-<slot />
-
 <style>
+	.container {
+		padding-left: 30px;
+		padding-right: 30px;
+		padding-top: 30px;
+	}
+
 	.nav-bar {
 		position: fixed;
 		bottom: 0;
 		width: 100%;
 		height: 80px;
-		background: #EFE5FF;
+		background: #efe5ff;
 		border-top: #4e1867 1px solid;
 		display: flex;
 		align-items: center;
@@ -62,6 +75,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		width: 75px;
 	}
 
 	.nav-bar .links img {
