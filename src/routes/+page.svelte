@@ -13,7 +13,7 @@
 
 <style lang="scss">
 	:global(.button) {
-		width: 80px;
+		width: 100%;
 		background-color: var(--light);
 	}
 </style>
