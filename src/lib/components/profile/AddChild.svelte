@@ -13,12 +13,11 @@
 		}
 		console.log("addChild", data);
 
-		localStorage.setItem('isChild', true);
+		// localStorage.setItem('isChild', true);
 		dispatch('addChild', {
 			isChild: true
 		});
 	};
-	// export const addChildHandle;
 </script>
 
 <form
@@ -62,6 +61,30 @@
             required
 		/>
 	</label>
+    <label>
+		Логин
+		<input
+			type="text"
+			placeholder="Дата рождения"
+			class="input"
+            id="login"
+            name="login"
+            value=""
+            required
+		/>
+	</label>
+    <label>
+		Пароль
+		<input
+			type="password"
+			placeholder="Дата рождения"
+			class="input"
+            id="password"
+            name="password"
+            value=""
+            required
+		/>
+	</label>
 	<button>Добавить</button>
 </form>
 
@@ -86,6 +109,11 @@
 		letter-spacing: -0.27px;
 		margin-bottom: 34px;
 	}
+
+    label {
+        display: flex;
+        flex-direction: column;
+    }
 
 	input {
 		border-radius: 11px;

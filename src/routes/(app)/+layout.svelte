@@ -23,7 +23,7 @@
 					src="/icons/forum.svg"
 					alt="Форум"
 				/>
-				<span>Форум</span>
+				<span>Обратная связь</span>
 			</a>
 		</li>
 		<li class="link">

@@ -1,27 +1,6 @@
-<script lang="ts">
-	export let placeholderText = '';
-	export let type = 'text';
-
-	const link = '/auth/child';
-	let isCopied = false;
-
-	const copyLinkHandle = async () => {
-		await navigator.clipboard.writeText(link);
-		isCopied = true;
-		setTimeout(() => {
-			isCopied = false;
-		}, 3000);
-	};
-</script>
-
 <form class="add-child-form">
 	<div class="title">Ребенок успешно добавлен</div>
-	<p>Скопируйте ссылку и отправьте ребенку что бы зарегистрировать его</p>
-	<p>Как только ребенок будет зарегистрирован, вы сможете пользоваться сервисом</p>
-	<div class="link">https://www.figma.com/file/zfiNupA...</div>
-	<button on:click|preventDefault={copyLinkHandle}
-		>{isCopied ? 'Ссылка скопированна' : 'Копировать ссылку'}</button
-	>
+	<p>Запишите и пароль ребенка что бы не забыть их, и помогите войти ребенку в приложение</p>
 </form>
 
 <style lang="scss">
