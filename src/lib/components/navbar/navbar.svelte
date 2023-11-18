@@ -30,14 +30,7 @@
 	</ul>
 </nav>
 
-
 <style>
-	.container {
-		padding-left: 30px;
-		padding-right: 30px;
-		padding-top: 30px;
-	}
-
 	.nav-bar {
 		position: fixed;
 		bottom: 0;

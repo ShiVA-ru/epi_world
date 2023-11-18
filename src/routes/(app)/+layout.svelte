@@ -16,8 +16,7 @@
 		const userRes = await getUser(1);
 		const user = await userRes.json();
 		console.log('res', user);
-	})
-
+	});
 </script>
 
 <div class="container">
@@ -26,12 +25,10 @@
 
 <Navbar />
 
-<!-- <ul>
-	<li><a href="/">Главная страница</a></li>
-	<li><a href="/account">Обратная связь</a></li>
-	<li><a href="/feedback">Личный кабинет</a></li>
-	<li><a href="/paint">Арттерапия</a></li>
-	<li><a href="/tests">Тесты</a></li>
-</ul> -->
-
-
+<style>
+	.container {
+		padding-left: 30px;
+		padding-right: 30px;
+		padding-top: 30px;
+	}
+</style>
