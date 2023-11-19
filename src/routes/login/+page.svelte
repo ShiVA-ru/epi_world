@@ -1,14 +1,37 @@
 <script>
+	import { goto } from '$app/navigation';
 	import '../../app.css';
+	import { registerUser } from '../../lib/api/api';
 
-	function sumbitHanler(event) {
+	let isError = false;
+
+	async function sumbitHanler(event) {
+		isError = false;
+
 		let formData = new FormData(event.target);
 		const data = {};
 		for (let field of formData) {
 			const [key, value] = field;
 			data[key] = value;
 		}
-		console.log(data);
+
+		try {
+			let response = await registerUser(data);
+			const currUser = await response.json();
+			console.log(currUser);
+
+			if (!currUser.jwt) {
+				isError = true;
+				return;
+			}
+
+			document.cookie = `token=${currUser.jwt}`;
+			
+			goto('/account')
+		} catch (error) {
+			isError = true;
+			console.error('Err: ', error);
+		}
 	}
 </script>
 
@@ -30,7 +53,7 @@
 			Логин
 			<input
 				class="form__input"
-				name="login"
+				name="identifier"
 				type="text"
 				placeholder="Ваш логин"
 				required
@@ -48,6 +71,9 @@
 		</label>
 
 		<button class="form__button">Войти</button>
+		{#if isError}
+			<div class="error">Не удалось войти <br /> Неверный логин или пароль</div>
+		{/if}
 	</form>
 
 	<div class="third-party-auth">
@@ -80,6 +106,12 @@
 </div>
 
 <style lang="scss">
+	.error {
+		margin-top: 10px;
+		text-align: center;
+		color: rgb(137, 53, 53);
+	}
+
 	.container {
 		padding: 0 28px;
 		margin-bottom: -60px;

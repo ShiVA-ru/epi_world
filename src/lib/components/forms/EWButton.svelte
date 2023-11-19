@@ -6,12 +6,13 @@
 	<slot />
 </button>
 
+<!-- У еня не переопределялся элемент поэтому закомитил стили -->
 <style lang="scss">
 	.button {
-		padding: 7px 5px;
+		// padding: 7px 5px;
 		line-height: 1;
 		border: none;
-		border-radius: 5px;
+		// border-radius: 5px;
 
 		&:focus-visible {
 			outline: none;
