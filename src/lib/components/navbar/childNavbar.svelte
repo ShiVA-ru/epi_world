@@ -10,10 +10,10 @@
 			</a>
 		</li>
 		<li class="link">
-			<a href="/tests">
+			<a href="/child-testing">
 				<img
 					src="/icons/teacher.svg"
-					alt="Форум"
+					alt="Тест"
 				/>
 				<span>Тест</span>
 			</a>
