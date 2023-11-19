@@ -53,12 +53,16 @@
 	{/if}
 
 	<div class="controls">
-		<button
-			class="show-menu"
+		<h2 class="statistic-title">Арттерапия</h2>
+		<div class="wrapper">
+			<button
+			class="button"
 			on:click={() => (showMenu = !showMenu)}
-		>
-			{showMenu ? 'close' : 'menu'}
+			>
+			{showMenu ? 'Закрыть' : 'Меню'}
 		</button>
+		<button class="button">Сохранить</button>
+	</div>
 	</div>
 </div>
 
@@ -70,7 +74,23 @@
 		width: 100%;
 		height: 100%;
 	}
+	
+	.statistic-title{
+		padding-top: 30px;
+		font-size: 24px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 22px;
+	}
 
+	.button {
+        width: 100%;
+		background-color: var(--primary);;
+        border-radius: 20px;
+        color: white;
+        margin-top: 5%;
+	}
+	
 	.controls {
 		position: absolute;
 		left: 0;
