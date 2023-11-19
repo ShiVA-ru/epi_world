@@ -38,7 +38,7 @@
 
     .picture-item{
         display: grid;
-        gap: 35px;
+        gap: 30px;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         overflow: auto;
         margin-bottom: 80px;
