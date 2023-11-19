@@ -1,25 +1,25 @@
 <nav class="nav-bar">
 	<ul class="links">
 		<li class="link">
-			<a href="/statistic">
+			<a href="/paint">
 				<img
-					src="/icons/diagnostic.svg"
+					src="/icons/paint.svg"
 					alt="Диагностика"
 				/>
-				<span>Диагностика</span>
+				<span>Рисовалка</span>
 			</a>
 		</li>
 		<li class="link">
-			<a href="/feedback">
+			<a href="/tests">
 				<img
-					src="/icons/forum.svg"
+					src="/icons/teacher.svg"
 					alt="Форум"
 				/>
-				<span>Обратная связь</span>
+				<span>Тест</span>
 			</a>
 		</li>
 		<li class="link">
-			<a href="/account">
+			<a href="/child-account">
 				<img
 					src="/icons/profile.svg"
 					alt="Профиль"
