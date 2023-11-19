@@ -44,12 +44,32 @@
 			width="150"
 		/>
 	</header>
-	<h1 class="main-title">Вход</h1>
+	<h1 class="main-title">Регистрация</h1>
 
 	<form
 		class="form"
 		on:submit={sumbitHanler}
 	>
+		<label class="form__label">
+			Имя*
+			<input
+				class="form__input"
+				name="identifier"
+				type="text"
+				placeholder="Ваше имя"
+				required
+			/>
+		</label>
+		<label class="form__label">
+			Фамилия*
+			<input
+				class="form__input"
+				name="identifier"
+				type="text"
+				placeholder="Ваша фамилия"
+				required
+			/>
+		</label>
 		<label class="form__label">
 			Логин*
 			<input
@@ -71,16 +91,11 @@
 			/>
 		</label>
 
-		<button class="form__button">Войти</button>
+		<button class="form__button">Регистрация</button>
 		{#if isError}
 			<div class="error">Не удалось войти <br /> Неверный логин или пароль</div>
 		{/if}
 	</form>
-
-	<a
-		href="/registration"
-		class="registration-link">Регистрация</a
-	>
 
 	<ThirdPartyAuth />
 </div>
@@ -114,7 +129,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: 4px;
-		margin-bottom: 10px;
+		margin-bottom: 80px;
 
 		&__label {
 			display: grid;
@@ -140,14 +155,5 @@
 			border-radius: 20px;
 			background-color: var(--primary);
 		}
-	}
-
-	.registration-link {
-		display: block;
-		margin-bottom: 70px;
-		text-align: center;
-		color: var(--light);
-		font-size: 16px;
-		font-weight: 400;
 	}
 </style>
