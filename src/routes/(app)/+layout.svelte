@@ -1,21 +1,28 @@
 <script>
+	import { getUserByToken } from './../../lib/api/api.js';
+	import { onMount } from 'svelte';
 	import '../../app.css';
 	import Navbar from '../../lib/components/navbar/navbar.svelte';
-	import { getUser } from './../../lib/api/api.js';
-	import { onMount } from 'svelte';
+	import userStore from './../(app)/storeUser.js';
+	import { get } from 'svelte/store';
 
 	export let data;
 
-	const token = data.token;
-	let isAuth = false;
+	const user = get(userStore);
 
 	onMount(async () => {
-		if (!token) {
-			return;
+		if (!data.token) return;
+
+		try {
+			const userRes = await getUserByToken(data.token);
+			const currUser = await userRes.json();
+
+			userStore.update(() => {
+				return currUser;
+			});
+		} catch (error) {
+			console.error(error);
 		}
-		const userRes = await getUser(1);
-		const user = await userRes.json();
-		console.log('res', user);
 	});
 </script>
 
@@ -23,7 +30,15 @@
 	<slot />
 </div>
 
-<Navbar />
+{#if $userStore}
+	{#if user?.isChild}
+		<div>child</div>
+	{:else}
+		<Navbar />
+	{/if}
+{:else}
+	""
+{/if}
 
 <style>
 	.container {
