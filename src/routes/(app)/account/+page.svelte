@@ -1,4 +1,5 @@
 <script>
+	import { goto } from '$app/navigation';
 	import Accept from '$lib/components/profile/accept.svelte';
 	import AddChild from '$lib/components/profile/AddChild.svelte';
 	import Info from '../../../lib/components/profile/info.svelte';
@@ -8,9 +9,22 @@
 	function handleMessage(event) {
 		isChild = event.detail.isChild;
 	}
+
+	const logoutHandle = () => {
+		goto('/logout');
+	};
 </script>
 
 <section>
+	<div class="header">
+		<button on:click={logoutHandle}>
+			<img
+				class="exit"
+				src="/icons/exit.svg"
+				alt="exit"
+			/>
+		</button>
+	</div>
 	<div class="profile">
 		<img
 			src=""
@@ -25,14 +39,19 @@
 
 	<!-- {#if localStorage.getItem("isChild")} -->
 	{#if isChild}
-	<Accept />
-	<Info />
+		<Accept />
+		<Info />
 	{:else}
-	<AddChild on:addChild={handleMessage} />
+		<AddChild on:addChild={handleMessage} />
 	{/if}
 </section>
 
 <style>
+	.header {
+		display: flex;
+		justify-content: end;
+	}
+
 	.profile {
 		display: flex;
 		margin-bottom: 40px;
@@ -70,52 +89,5 @@
 		font-weight: 300;
 		line-height: 22px;
 		letter-spacing: -0.4px;
-	}
-
-	.add-child-form {
-		width: 100%;
-		flex-shrink: 0;
-		border-radius: 16px;
-		background: #efe5ff;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		padding: 50px 32px;
-	}
-
-	.add-child-form .title {
-		color: #000;
-		font-size: 18px;
-		font-style: normal;
-		font-weight: 600;
-		line-height: normal;
-		letter-spacing: -0.27px;
-		margin-bottom: 34px;
-	}
-
-	input {
-		border-radius: 11px;
-		border: 1px solid #42049f;
-		background: #fff;
-		width: 240px;
-		height: 38px;
-		flex-shrink: 0;
-		padding: 10px;
-		margin-bottom: 15px;
-	}
-
-	button {
-		width: 165px;
-		height: 43px;
-		flex-shrink: 0;
-		border-radius: 20px;
-		background: #7f18af;
-		color: #fff;
-		font-size: 17px;
-		font-style: normal;
-		font-weight: 500;
-		line-height: normal;
-		letter-spacing: -0.255px;
-		margin-top: 15px;
 	}
 </style>

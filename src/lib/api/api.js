@@ -1,6 +1,13 @@
-export const apiUrl = "http://localhost:1337/api";
+export const apiUrl = "https://backend-epimir-production.up.railway.app/api";
 
 export const getUser = (id) => fetch(`${apiUrl}/users/${id}`);
+
+
+export const getUserByToken = (token) => fetch(`${apiUrl}/users/me`, {
+    headers: {
+        'Authorization': `Bearer ${token}`
+    },
+});
 
 export const registerUser = (data) => fetch(`${apiUrl}/auth/local`, {
     method: 'POST',
