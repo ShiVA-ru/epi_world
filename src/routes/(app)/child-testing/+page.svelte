@@ -1,30 +1,27 @@
 <script>
+	import EwButton from "$lib/components/forms/EWButton.svelte";
 	import EwQuation from "./EWQuation.svelte";
     export let data;
 </script>
 
 <section>
 	<div class="test">
-		{#each data.summaries as { numQuation, quation, answer }}
+		{#each data.summaries as { numQuation, quation, answer1, answer2, answer3 }}
 			<EwQuation
 				numQuation={numQuation}
 				quation={quation}
-				answer={answer}
+				answer1={answer1}
+				answer2={answer2}
+				answer3={answer3}
 			/>
 		{/each}
 	</div>
+	<a href="/child-account/">
+		<EwButton class="button__test mx-auto">Завершить тест</EwButton>
+	</a>
 </section>
 
 <style>
-	:global(.button) {
-        width: 100%;
-		background-color: var(--primary);;
-        border-radius: 20px;
-        color: white;
-        margin-top: 20px;
-        margin-bottom: 50px;
-        padding: 10px 0;
-	}
 	section {
 		padding: 0 5%;
 		display: flex;
