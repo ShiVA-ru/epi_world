@@ -1,4 +1,5 @@
 <script>
+	import ChildNavbar from './../../lib/components/navbar/childNavbar.svelte';
 	import { getUserByToken } from './../../lib/api/api.js';
 	import { onMount } from 'svelte';
 	import '../../app.css';
@@ -32,7 +33,7 @@
 
 {#if $userStore}
 	{#if user?.isChild}
-		<div>child</div>
+		<ChildNavbar />
 	{:else}
 		<Navbar />
 	{/if}

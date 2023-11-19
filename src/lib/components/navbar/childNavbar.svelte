@@ -3,7 +3,7 @@
 		<li class="link">
 			<a href="/paint">
 				<img
-					src="/icons/pain.svg"
+					src="/icons/paint.svg"
 					alt="Диагностика"
 				/>
 				<span>Рисовалка</span>
