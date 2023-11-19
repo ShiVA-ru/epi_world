@@ -26,7 +26,6 @@
         padding: 10px 0;
 	}
 	section {
-		padding: 0 5%;
 		display: flex;
         flex-direction: column;
         gap: 20px;

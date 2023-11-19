@@ -24,10 +24,6 @@
 </div>
 
 <style>
-    .picture{
-        padding: 0 5%;
-    }
-
     .picture-title{
         padding: 30px  5%;
         font-size: 24px;
