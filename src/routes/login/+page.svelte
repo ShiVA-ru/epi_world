@@ -3,6 +3,7 @@
 	import '../../app.css';
 	import { registerUser } from '../../lib/api/api';
 	import ThirdPartyAuth from '../../lib/components/login/ThirdPartyAuth.svelte';
+	import userStore from '../(app)/storeUser.js';
 
 	let isError = false;
 
@@ -19,15 +20,18 @@
 		try {
 			let response = await registerUser(data);
 			const currUser = await response.json();
-			console.log(currUser);
+			const user = currUser.user
 
 			if (!currUser.jwt) {
 				isError = true;
 				return;
 			}
 
-			document.cookie = `token=${currUser.jwt}`;
+			userStore.update(() => {
+				return user
+			})
 
+			document.cookie = `token=${currUser.jwt}`;
 			goto('/account');
 		} catch (error) {
 			isError = true;

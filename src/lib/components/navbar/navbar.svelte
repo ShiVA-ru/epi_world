@@ -31,7 +31,7 @@
 			<a href="/theory">
 				<img
 					src="/icons/book.svg"
-					alt="Профиль"
+					alt="Теория"
 				/>
 				<span>Теория</span>
 			</a>
