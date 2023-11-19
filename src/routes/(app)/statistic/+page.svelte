@@ -29,8 +29,8 @@
         <h3 class="statistic-text">Интерактивные игры</h3>
         <p class="statistic__botton-text">Результаты</p>
         
-        <a href="/tests/">
-            <EwButton class="button__test">Все тесты</EwButton>
+        <a href="/testing/">
+            <EwButton class="button__test mx-auto">Тест 1</EwButton>
         </a>
     </div>
 </section>
@@ -54,6 +54,7 @@
         margin-top: 20px;
         margin-bottom: 50px;
         padding: 10px 0;
+        // text-align: left;
 	}
 
     .statistic{

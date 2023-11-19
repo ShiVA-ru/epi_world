@@ -1,31 +1,30 @@
 <script>
 	import Question from "../../../lib/components/testing/question.svelte";
+	import EwQuation from "./EWQuation.svelte";
+    export let data;
 </script>
 
-<h1>Тест</h1>
 <section>
-	<Question />
-	<Question />
-	<Question />
-	<Question />
+	<div class="test">
+		{#each data.summaries as { numQuation, quation, answer }}
+			<EwQuation
+				numQuation={numQuation}
+				quation={quation}
+				answer={answer}
+			/>
+		{/each}
+	</div>
 </section>
 
 <style>
-	h1 {
-		color: #000;
-		font-family: Roboto;
-		font-size: 24px;
-		font-style: normal;
-		font-weight: 600;
-		line-height: 22px;
-		letter-spacing: -0.4px;
-		margin: 70px 0px 0px 20px;
-	}
 	section {
-		height: 800vw;
-		margin: 20px 20px 35px;
+		padding: 0 5%;
+		display: flex;
+        flex-direction: column;
+        gap: 20px;
+		
 		border-radius: 16px;
 		background: #EFE5FF;
-		background-attachment: fixed;
+		/* background-attachment: fixed; */
 	}
 </style>
