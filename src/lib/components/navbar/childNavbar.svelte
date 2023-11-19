@@ -27,6 +27,15 @@
 				<span>Профиль</span>
 			</a>
 		</li>
+		<li class="link">
+			<a href="/theory">
+				<img
+					src="/icons/book.svg"
+					alt="Теория"
+				/>
+				<span>Теория</span>
+			</a>
+		</li>
 	</ul>
 </nav>
 

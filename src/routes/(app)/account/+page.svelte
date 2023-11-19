@@ -3,8 +3,12 @@
 	import Accept from '$lib/components/profile/accept.svelte';
 	import AddChild from '$lib/components/profile/AddChild.svelte';
 	import Info from '../../../lib/components/profile/info.svelte';
+	import userStore from '../../(app)/storeUser.js';
+	import { get } from 'svelte/store';
 
 	let isChild = false;
+
+	const user = get(userStore)
 
 	function handleMessage(event) {
 		isChild = event.detail.isChild;

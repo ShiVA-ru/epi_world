@@ -16,10 +16,9 @@
 
 		try {
 			const userRes = await getUserByToken(data.token);
-			const currUser = await userRes.json();
-
+			const user = await userRes.json();
 			userStore.update(() => {
-				return currUser;
+				return user;
 			});
 		} catch (error) {
 			console.error(error);
